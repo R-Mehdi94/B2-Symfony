@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ResponsableAteliers{% endblock %}
+
+{% block body %}
+    <h1>Create new ResponsableAteliers</h1>
+
+    {{ include('responsable_ateliers/_form.html.twig') }}
+
+    <a href="{{ path('app_responsable_ateliers_index') }}">back to list</a>
+{% endblock %}
