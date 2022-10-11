@@ -34,6 +34,12 @@ class Stage
         $this->client = new ArrayCollection();
     }
 
+    public function __toString() {
+        return $this->animateur;
+        return $this->DateDebut;
+
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -24,16 +24,11 @@ class __TwigTemplate_615719cd75ec79811ebb92c2a166fc2a extends Template
 
         $this->source = $this->getSourceContext();
 
+        $this->parent = false;
+
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
-    }
-
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -42,57 +37,70 @@ class __TwigTemplate_615719cd75ec79811ebb92c2a166fc2a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "stage/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "stage/index.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 1
+        $this->displayBlock('body', $context, $blocks);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Hello StageController!";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-    }
-
-    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        // line 2
+        echo "    <h1> Stage </h1>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
+     <table class=\"table\">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>IdAnimateur</th>
+                <th>Date de debut</th>
+                <th>Nombre de jours</th>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/home/r-mehdi/SIO/B2-Symfony/sbstage/src/Controller/StageController.php", 0), "html", null, true);
-        echo "\">src/Controller/StageController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/home/r-mehdi/SIO/B2-Symfony/sbstage/templates/stage/index.html.twig", 0), "html", null, true);
-        echo "\">templates/stage/index.html.twig</a></code></li>
-    </ul>
-</div>
+            </tr>
+
+         </thead>
+        
+        <tbody>
+
+            ";
+        // line 18
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["stages"]) || array_key_exists("stages", $context) ? $context["stages"] : (function () { throw new RuntimeError('Variable "stages" does not exist.', 18, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["stage"]) {
+            // line 19
+            echo "                    <tr>
+                        <td>";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "id", [], "any", false, false, false, 20), "html", null, true);
+            echo "</td>
+                        <td>";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "animateur", [], "any", false, false, false, 21), "html", null, true);
+            echo "</td>
+                        <td>";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["stage"], "dateDebut", [], "any", false, false, false, 22), "format", [0 => "Y-m-d"], "method", false, false, false, 22), "html", null, true);
+            echo "</td>
+                        <td>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nbJours", [], "any", false, false, false, 23), "html", null, true);
+            echo "</td>
+                    </tr>
+
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['stage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 27
+        echo "
+        </tbody>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -104,37 +112,42 @@ class __TwigTemplate_615719cd75ec79811ebb92c2a166fc2a extends Template
         return "stage/index.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  92 => 17,  88 => 16,  81 => 12,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  101 => 27,  91 => 23,  87 => 22,  83 => 21,  79 => 20,  76 => 19,  72 => 18,  54 => 2,  41 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% block body %}
+    <h1> Stage </h1>
 
-{% block title %}Hello StageController!{% endblock %}
+     <table class=\"table\">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>IdAnimateur</th>
+                <th>Date de debut</th>
+                <th>Nombre de jours</th>
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+            </tr>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+         </thead>
+        
+        <tbody>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ '/home/r-mehdi/SIO/B2-Symfony/sbstage/src/Controller/StageController.php'|file_link(0) }}\">src/Controller/StageController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ '/home/r-mehdi/SIO/B2-Symfony/sbstage/templates/stage/index.html.twig'|file_link(0) }}\">templates/stage/index.html.twig</a></code></li>
-    </ul>
-</div>
+            {% for stage in stages %}
+                    <tr>
+                        <td>{{stage.id}}</td>
+                        <td>{{stage.animateur}}</td>
+                        <td>{{stage.dateDebut.format('Y-m-d')}}</td>
+                        <td>{{stage.nbJours}}</td>
+                    </tr>
+
+            {% endfor %}
+
+        </tbody>
+
 {% endblock %}
 ", "stage/index.html.twig", "/home/r-mehdi/SIO/B2-Symfony/sbstage/templates/stage/index.html.twig");
     }

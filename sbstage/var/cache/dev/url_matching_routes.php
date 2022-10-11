@@ -10,7 +10,7 @@ return [
     [ // $staticRoutes
         '/animateur' => [[['_route' => 'app_animateur_index', '_controller' => 'App\\Controller\\AnimateurController::index'], null, ['GET' => 0], null, true, false, null]],
         '/animateur/new' => [[['_route' => 'app_animateur_new', '_controller' => 'App\\Controller\\AnimateurController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/stage' => [[['_route' => 'app_stage', '_controller' => 'App\\Controller\\StageController::index'], null, null, null, false, false, null]],
+        '/stage' => [[['_route' => 'voirTous', '_controller' => 'App\\Controller\\StageController::index'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
