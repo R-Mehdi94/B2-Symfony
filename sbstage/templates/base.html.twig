@@ -1,0 +1,23 @@
+{% block body %}
+    <h1> Stage </h1>
+
+     <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+            </tr>
+
+         </thead>
+        
+        <tbody>
+
+            {% for stage in stages %}
+                    <tr>
+                        <td>{{ stage.id }}</td>
+                    </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+
