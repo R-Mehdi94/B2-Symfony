@@ -5,18 +5,23 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>IdAnimateur</th>
+                <th>Date de debut</th>
+                <th>Nombre de jours</th>
             </tr>
 
          </thead>
         
         <tbody>
 
-            {% for stage in stages %}
+            
                     <tr>
-                        <td>{{ stage.id }}</td>
+                        <td>{{ stage }}</td>
+                        {# <td>{{stage.animateur}}</td>
+                        <td>{{stage.dateDebut.format('Y-m-d')}}</td>
+                        <td>{{stage.nbJours}}</td>#}
                     </tr>
 
-            {% endfor %}
 
         </tbody>
 

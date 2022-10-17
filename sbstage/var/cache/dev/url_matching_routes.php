@@ -19,14 +19,16 @@ return [
                     .'|/edit(*:41)'
                     .'|(*:48)'
                 .')'
-                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:84)'
+                .'|/stage/([^/]++)(*:71)'
+                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:106)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
         29 => [[['_route' => 'app_animateur_show', '_controller' => 'App\\Controller\\AnimateurController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         41 => [[['_route' => 'app_animateur_edit', '_controller' => 'App\\Controller\\AnimateurController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         48 => [[['_route' => 'app_animateur_delete', '_controller' => 'App\\Controller\\AnimateurController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        84 => [
+        71 => [[['_route' => 'voirStagesAnimateurs', '_controller' => 'App\\Controller\\StageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        106 => [
             [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

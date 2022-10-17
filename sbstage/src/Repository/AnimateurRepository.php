@@ -39,6 +39,13 @@ class AnimateurRepository extends ServiceEntityRepository
         }
     }
 
+    public function getStageParAnimateurs(): array{
+        return $this -> getEntityManager()
+                     -> createQuery('select s 
+                                    from Stage s
+                                    where s.animateur = 1');
+    }
+
 //    /**
 //     * @return Animateur[] Returns an array of Animateur objects
 //     */
