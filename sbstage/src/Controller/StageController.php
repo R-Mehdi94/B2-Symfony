@@ -8,24 +8,28 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Stage;
 use App\Entity\Animateur;
 use App\Repository\StageRepository;
+use App\Repository\AnimateurRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 
 
 class StageController extends AbstractController
 {
-    #[Route('/stage', name: 'voirTous', methods: ['GET'])]
-    public function index(StageRepository $stage): Response
+    #[Route('/stages', name: 'voirTous', methods: ['GET'])]
+    public function voirTous(StageRepository $stage): Response
     {
         return $this->render('stage/index.html.twig', [
             'stages' => $stage->findAll() ,
         ]);
     }
 
-    #[Route('/stage/{id}', name: 'voirStagesAnimateurs', methods: ['GET'])]
-    public function show(Stage $stage): Response
+    #[Route('/stages/{idAnimateur}', name: 'voirStagesAnimateurs')]
+    public function voirStagesAnimateurs($idAnimateur, AnimateurRepository $stage): Response
     {
         return $this->render('stage/base.html.twig', [
-            'stage' => $stage,
+            'stages' => $stage->getStageParAnimateurs($idAnimateur) ,
         ]);
     }
+    
 }

@@ -39,11 +39,13 @@ class AnimateurRepository extends ServiceEntityRepository
         }
     }
 
-    public function getStageParAnimateurs(): array{
-        return $this -> getEntityManager()
-                     -> createQuery('select s 
-                                    from Stage s
-                                    where s.animateur = 1');
+    public function getStageParAnimateurs(int $numAnim): array{
+        $dql= 'select s 
+        from App\Entity\Stage s
+        where s.animateur = :numAnim';
+
+        $query = $this-> getEntityManager() -> createQuery($dql);
+        return $query->setParameter('numAnim', $numAnim)->execute();
     }
 
 //    /**

@@ -13,19 +13,17 @@
          </thead>
         
         <tbody>
-
-            
+                {% for stage in stages %}
                     <tr>
-                        <td>{{ stage }}</td>
-                        {# <td>{{stage.animateur}}</td>
+                        <td>{{stage.id}}</td>
+                        <td>{{stage.animateur}}</td>
                         <td>{{stage.dateDebut.format('Y-m-d')}}</td>
-                        <td>{{stage.nbJours}}</td>#}
+                        <td>{{stage.nbJours}}</td>
                     </tr>
+                {% endfor %}
+
 
 
         </tbody>
 
 {% endblock %}
-
-
-
