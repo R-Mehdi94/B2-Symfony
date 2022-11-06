@@ -3318,13 +3318,13 @@
         <argument key="stage" type="service_closure" id="App\Repository\StageRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.DRfR0nT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.uIHIt8h" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="stage" type="service_closure" id="App\Repository\AnimateurRepository"/>
+        <argument key="client" type="service_closure" id="App\Repository\StageRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.cwkgmQ5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.rSl2yrA" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AnimateurController::delete" type="service_closure" id=".service_locator.ZGBdvEA"/>
@@ -3332,7 +3332,8 @@
         <argument key="App\Controller\AnimateurController::index" type="service_closure" id=".service_locator.4IwbDDw"/>
         <argument key="App\Controller\AnimateurController::new" type="service_closure" id=".service_locator.4IwbDDw"/>
         <argument key="App\Controller\AnimateurController::show" type="service_closure" id=".service_locator.F5hPGkP"/>
-        <argument key="App\Controller\StageController::voirStagesAnimateurs" type="service_closure" id=".service_locator.DRfR0nT"/>
+        <argument key="App\Controller\StageController::voirClientStages" type="service_closure" id=".service_locator.uIHIt8h"/>
+        <argument key="App\Controller\StageController::voirStagesAnimateurs" type="service_closure" id=".service_locator.25eOTbX"/>
         <argument key="App\Controller\StageController::voirTous" type="service_closure" id=".service_locator.25eOTbX"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -3345,7 +3346,8 @@
         <argument key="App\Controller\AnimateurController:index" type="service_closure" id=".service_locator.4IwbDDw"/>
         <argument key="App\Controller\AnimateurController:new" type="service_closure" id=".service_locator.4IwbDDw"/>
         <argument key="App\Controller\AnimateurController:show" type="service_closure" id=".service_locator.F5hPGkP"/>
-        <argument key="App\Controller\StageController:voirStagesAnimateurs" type="service_closure" id=".service_locator.DRfR0nT"/>
+        <argument key="App\Controller\StageController:voirClientStages" type="service_closure" id=".service_locator.uIHIt8h"/>
+        <argument key="App\Controller\StageController:voirStagesAnimateurs" type="service_closure" id=".service_locator.25eOTbX"/>
         <argument key="App\Controller\StageController:voirTous" type="service_closure" id=".service_locator.25eOTbX"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -3578,12 +3580,12 @@
     <service id="debug.argument_resolver.request.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver"/>
     <service id="debug.argument_resolver.session.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver"/>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.cwkgmQ5"/>
+      <argument type="service" id=".service_locator.rSl2yrA"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.cwkgmQ5"/>
+      <argument type="service" id=".service_locator.rSl2yrA"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -4235,7 +4237,7 @@
     <service id="doctrine.migrations.metadata_storage" alias="doctrine.migrations.storage.table_storage"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.cwkgmQ5"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.rSl2yrA"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -4243,7 +4245,7 @@
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.Tr4Mp4C" alias=".service_locator.cwkgmQ5"/>
+    <service id=".service_locator.V1Z6_Jm" alias=".service_locator.rSl2yrA"/>
     <service id=".service_locator.bkUSUfi" alias=".service_locator.AHPGEE6"/>
     <service id=".service_locator.1MQ.guU" alias=".service_locator.fAgrSIu"/>
     <service id=".service_locator.4hi2aOY" alias=".service_locator.bBRwv06"/>
@@ -4267,7 +4269,7 @@
     <service id=".service_locator.H_r8v51" alias=".service_locator.F5hPGkP"/>
     <service id=".service_locator.cb.DMz9" alias=".service_locator.ZGBdvEA"/>
     <service id=".service_locator.DSno_yO" alias=".service_locator.25eOTbX"/>
-    <service id=".service_locator..abdmsc" alias=".service_locator.DRfR0nT"/>
+    <service id=".service_locator.ktru_0C" alias=".service_locator.uIHIt8h"/>
     <service id=".service_locator.h35BGeW" alias=".service_locator.mx0UMmY"/>
     <service id=".service_locator.L0rFhJm" alias=".service_locator.GVyCdgr"/>
   </services>

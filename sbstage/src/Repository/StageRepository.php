@@ -39,6 +39,26 @@ class StageRepository extends ServiceEntityRepository
         }
     }
 
+    public function getStageParAnimateurs(int $numAnim): array{
+        $dql= 'select s 
+        from App\Entity\Stage s
+        where s.animateur = :numAnim';
+
+        $query = $this-> getEntityManager() -> createQuery($dql);
+        return $query->setParameter('numAnim', $numAnim)->execute();
+    }
+
+    public function getClientParStages($numStage): array{
+        $dql= 'select c 
+        from App\Entity\Stage s 
+        join App\Entity\Client c 
+        with s.client = c
+        where s.id = :numStage';
+
+        $query = $this-> getEntityManager() -> createQuery($dql);
+        return $query->setParameter('numStage', $numStage)->execute();
+    }
+
 //    /**
 //     * @return Stage[] Returns an array of Stage objects
 //     */

@@ -25,10 +25,18 @@ class StageController extends AbstractController
     }
 
     #[Route('/stages/{idAnimateur}', name: 'voirStagesAnimateurs')]
-    public function voirStagesAnimateurs($idAnimateur, AnimateurRepository $stage): Response
+    public function voirStagesAnimateurs($idAnimateur, StageRepository $stage): Response
     {
         return $this->render('stage/base.html.twig', [
             'stages' => $stage->getStageParAnimateurs($idAnimateur) ,
+        ]);
+    }
+
+    #[Route('/stages/{idStage}/participants', name: 'voirClientStages')]
+    public function voirClientStages($idStage, StageRepository $client): Response
+    {
+        return $this->render('stage/base2.html.twig', [
+            'clients' => $client->getClientParStages(2) ,
         ]);
     }
     

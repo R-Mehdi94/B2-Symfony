@@ -19,16 +19,20 @@ return [
                     .'|/edit(*:41)'
                     .'|(*:48)'
                 .')'
-                .'|/stages/([^/]++)(*:72)'
-                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:107)'
+                .'|/stages/([^/]++)(?'
+                    .'|(*:75)'
+                    .'|/participants(*:95)'
+                .')'
+                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:131)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
         29 => [[['_route' => 'app_animateur_show', '_controller' => 'App\\Controller\\AnimateurController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         41 => [[['_route' => 'app_animateur_edit', '_controller' => 'App\\Controller\\AnimateurController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         48 => [[['_route' => 'app_animateur_delete', '_controller' => 'App\\Controller\\AnimateurController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        72 => [[['_route' => 'voirStagesAnimateurs', '_controller' => 'App\\Controller\\StageController::voirStagesAnimateurs'], ['idAnimateur'], null, null, false, true, null]],
-        107 => [
+        75 => [[['_route' => 'voirStagesAnimateurs', '_controller' => 'App\\Controller\\StageController::voirStagesAnimateurs'], ['idAnimateur'], null, null, false, true, null]],
+        95 => [[['_route' => 'voirClientStages', '_controller' => 'App\\Controller\\StageController::voirClientStages'], ['idStage'], null, null, false, false, null]],
+        131 => [
             [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
